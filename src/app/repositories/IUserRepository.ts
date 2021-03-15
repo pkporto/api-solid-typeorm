@@ -1,6 +1,6 @@
-import { User } from "../models/User";
+import { Users } from "../models/Users";
 
 export interface IUserRepository {
-    findByEmail(email: string): Promise<User>;
-    save(user: User): void;
+    findByEmail(email: string): Promise<Users>;
+    save(user: Users): void;
 }

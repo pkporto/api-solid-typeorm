@@ -1,12 +1,12 @@
 import { getRepository } from "typeorm";
-import { User } from "../../models/User";
+import { Users } from "../../models/Users";
 import { IUserRepository } from '../IUserRepository';
 
 export class CreateUserDb implements IUserRepository {
-    async findByEmail(email: string): Promise<User>{
+    async findByEmail(email: string): Promise<Users>{
         try {
             
-        const expo = await getRepository(User).findOne(
+        const expo = await getRepository(Users).findOne(
             { where:
                 { email: email }
             });
@@ -18,9 +18,9 @@ export class CreateUserDb implements IUserRepository {
         }
     }
 
-    async save(user: User): Promise<void>{
+    async save(user: Users): Promise<void>{
         try {
-            await getRepository(User).save(user);
+            await getRepository(Users).save(user);
         } catch (error) {
             
         }

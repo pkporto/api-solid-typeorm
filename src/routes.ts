@@ -7,4 +7,4 @@ const router = Router();
      return createUserController.handle(req, res);
  });
 
-export default  router ;
+export default router;

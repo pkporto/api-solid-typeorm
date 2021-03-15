@@ -1,4 +1,4 @@
-import { User } from '../../models/User';
+import { Users } from '../../models/Users';
 import { IUserRepository } from '../../repositories/IUserRepository';
 import { ICreateUserRequestDTO } from './CreateUserDTO';
 
@@ -13,7 +13,7 @@ export class CreateUserUseCase {
             throw new Error('User already exists.');
         }
 
-        const user = new User(data);
+        const user = new Users(data);
 
         await this.usersRepository.save(user);
         
